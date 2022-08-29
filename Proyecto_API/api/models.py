@@ -1,0 +1,11 @@
+from operator import mod
+from django.db import models
+
+# Create your models here.
+
+#primer modelo
+
+class Company(models.Model):
+    name = models.CharField(max_length=50)
+    website = models.URLField(max_length=100)
+    foundation = models.PositiveIntegerField()
