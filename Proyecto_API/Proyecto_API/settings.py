@@ -65,7 +65,8 @@ CORS_ORIGIN_WHITELIST = (
     'http://localhost',
     'http://localhost:3000',
     'http://localhost:4200',
-    'http://192.168.56.1:3000'
+    'http://192.168.56.1:3000',
+    'http://192.168.1.82:8000'
 )
 
 ROOT_URLCONF = 'Proyecto_API.urls'
@@ -92,6 +93,7 @@ WSGI_APPLICATION = 'Proyecto_API.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -105,6 +107,19 @@ DATABASES = {
         }
     }
 }
+"""
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dja_api',
+        'USER': 'postgres',
+        'PASSWORD': '1399',
+        'HOST': 'localhost',  # set in docker-compose.yml
+        'PORT': '5432',  # default postgres port
+    }
+}
+
 
 
 # Password validation
