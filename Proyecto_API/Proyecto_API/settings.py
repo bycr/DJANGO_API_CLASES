@@ -111,14 +111,28 @@ DATABASES = {
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'dja_api',
         'USER': 'postgres',
-        'PASSWORD': '1399',
-        'HOST': 'localhost',  # set in docker-compose.yml
-        'PORT': '5432',  # default postgres port
+        'PASSWORD': 'postgres',
+        'HOST': 'localhost',
+        'PORT': '2022',
+        }
+    }
+
+print(DATABASES)
+"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': os.environ.get('localhost'),
+        'NAME': os.environ.get('dja_api'),
+        'USER': os.environ.get('brayan'),
+        'PASSWORD': os.environ.get('1399'),
+        'PORT': os.environ.get('5432')
     }
 }
+"""
 
 
 
